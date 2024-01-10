@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+<html>
+<body>
+
+<h1>Text explorer</h1>
+
+<input id="inputElement" type="number" value="100" oninput="updateSizeAndUnit()"><label>size</label>
+<br>
+
+<select id="unitPicker" oninput="updateSizeAndUnit()">
+    <option value="px">
+    px
+    </option>
+
+    <option value="pt">
+    pt
+    </option>
+</select>
+
+<br>
+<p id=textElement>Dette er en tekst<p>
+
+
+<script>	
+    element = document.getElementById("textElement")
+    inputElement = document.getElementById("inputElement")
+    typeElement = document.getElementById("unitPicker")
+
+    console.log(typeElement)
+
+    function updateSize(){
+	console.log(inputElement.value)
+	element.style.fontSize = "px"
+    }
+
+    function updateUnit(){
+	console.log(typeElement.value)
+    }
+
+    function updateSizeAndUnit(){
+	var size = inputElement.value
+	var unit = typeElement.value
+
+	element.style.fontSize = size + "" + unit
+    }
+
+</script>
+
+</body>
+</html> 
